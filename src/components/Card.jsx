@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import '../styles/Card.css';
 
-const Card = ({id, handleClick, reset}) => {
+// Pass pokemon dex number as id prop and click handler to child component
+const Card = ({id, handleClick}) => {
   const [pokeName, setPokeName] = useState('');
   const [imageUrl, setImageUrl] = useState(null);
 
+  // Fetch the names and images from pokeapi.co using the pokemon's dex number
   useEffect(() => {
     fetch(
       `https://pokeapi.co/api/v2/pokemon/${id}`,{ mode: "cors" })
@@ -14,13 +17,15 @@ const Card = ({id, handleClick, reset}) => {
       .catch((error) => console.error(error));
   }, []);
 
+  // Generate card with the returned image and name string
   return (
     <div className="card" id={id} onClick={handleClick}>
-      <img 
+      <img
+        className="portrait"
         src={imageUrl}
         alt={pokeName}
       />
-      <p>
+      <p className="pokename">
         {pokeName.charAt(0).toUpperCase() + pokeName.slice(1)}
       </p>
     </div>
