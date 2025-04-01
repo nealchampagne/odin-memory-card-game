@@ -6,6 +6,7 @@
   grid-template-rows: 1fr 2rem;
   justify-items: center;
   align-items: center;
+  cursor: pointer;
 }
 
 .portrait {
@@ -20,4 +21,8 @@
   font-weight: 700;
   color: white;
   margin: 0;
+}
+
+p {
+  cursor: pointer;
 }

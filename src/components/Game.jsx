@@ -36,7 +36,7 @@ const Game = () => {
   return (
     <>
       <header>
-        <div id="title">Remembo!</div>
+        <div id="title">Gotta Click 'em All!</div>
         <div className="scorecontainer">
           <p>Score: {score} / 16</p>
           <p>High Score: {highScore} / 16</p>
